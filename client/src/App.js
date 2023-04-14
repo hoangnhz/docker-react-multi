@@ -20,7 +20,7 @@ function App() {
           >
             Learn React
           </a>
-          <Link to="/">DevOps</Link>
+          <Link to="/">DevOpsMaster</Link>
           <Link to="/otherpage">Other Page</Link>
         </header>
         <div>
