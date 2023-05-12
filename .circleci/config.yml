@@ -16,7 +16,7 @@ jobs:
           image: client-test 
           dockerfile: Dockerfile.dev 
           docker-context: client 
-          path: client/Dockerfile.dev
+          path: client
   build-docker-image:
     docker:
       # replace with your preferred image
