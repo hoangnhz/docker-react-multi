@@ -55,9 +55,10 @@ jobs:
             docker push hoangnhdocker/multi-nginx:latest
             docker push hoangnhdocker/multi-worker:latest
 
-
 workflows:
   example-workflow:
     jobs:
       - test-client
-      - build-docker-image
+      - build-docker-image:
+          requires:
+            - test-client
