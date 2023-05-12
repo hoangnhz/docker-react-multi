@@ -21,7 +21,7 @@ jobs:
       - run:
           name: run test
           command: 
-            docker run client-test npm test -- --coverage
+            docker run -e CI=true client-test npm run test
   build-docker-image:
     docker:
       # replace with your preferred image
