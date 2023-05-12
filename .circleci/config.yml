@@ -10,10 +10,22 @@ jobs:
       - setup_remote_docker:
           docker_layer_caching: true
       - run:
-          name: Build Docker Image
+          name: Build Client Docker Image
           command: 
-            docker build ./client
-
+            docker build -t hoangnhdocker/multi-client:latest ./client
+      - run:
+          name: Build Server Docker Image
+          command: 
+            docker build hoangnhdocker/multi-server:latest ./server
+      - run:
+          name: Build Nginx Docker Image
+          command: 
+            docker build hoangnhdocker/multi-nginx:latest ./nginx
+      - run:
+          name: Build Worker Docker Image
+          command: 
+            docker build hoangnhdocker/multi-worker:latest ./worker
+            
 workflows:
   example-workflow:
     jobs:
