@@ -16,16 +16,16 @@ jobs:
       - run:
           name: Build Server Docker Image
           command: 
-            docker build hoangnhdocker/multi-server:latest ./server
+            docker build -t hoangnhdocker/multi-server:latest ./server
       - run:
           name: Build Nginx Docker Image
           command: 
-            docker build hoangnhdocker/multi-nginx:latest ./nginx
+            docker build -t hoangnhdocker/multi-nginx:latest ./nginx
       - run:
           name: Build Worker Docker Image
           command: 
-            docker build hoangnhdocker/multi-worker:latest ./worker
-            
+            docker build -t hoangnhdocker/multi-worker:latest ./worker
+
 workflows:
   example-workflow:
     jobs:
