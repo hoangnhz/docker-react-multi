@@ -25,6 +25,15 @@ jobs:
           name: Build Worker Docker Image
           command: 
             docker build -t hoangnhdocker/multi-worker:latest ./worker
+      - run:
+          name: Push Docker image
+          command: |
+            echo $DOCKER_PWD | docker login -u $DOCKER_LOGIN --password-stdin
+            docker push hoangnhdocker/multi-client:latest
+            docker push hoangnhdocker/multi-server:latest
+            docker push hoangnhdocker/multi-nginx:latest
+            docker push hoangnhdocker/multi-worker:latest
+
 
 workflows:
   example-workflow:
