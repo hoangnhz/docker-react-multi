@@ -12,7 +12,7 @@ jobs:
       - run:
           name: Build Docker Image
           command: 
-            docker build -f Dockerfile.dev ./client
+            docker build ./client
 
 workflows:
   example-workflow:
