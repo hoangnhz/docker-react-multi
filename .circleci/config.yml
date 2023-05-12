@@ -28,7 +28,7 @@ jobs:
       - run:
           name: Push Docker image
           command: |
-            echo $DOCKER_PWD | docker login -u $DOCKER_LOGIN --password-stdin
+            echo $DOCKER_PASSWORD | docker login -u $DOCKER_LOGIN --password-stdin
             docker push hoangnhdocker/multi-client:latest
             docker push hoangnhdocker/multi-server:latest
             docker push hoangnhdocker/multi-nginx:latest
