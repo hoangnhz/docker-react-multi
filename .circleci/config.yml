@@ -13,10 +13,11 @@ jobs:
       - setup_remote_docker:
           docker_layer_caching: true
       - docker/build:
-          image: client-test 
+          image: client-test
           dockerfile: Dockerfile.dev 
           docker-context: client 
           path: client
+          tag: latest
       - run:
           name: run test
           command: 
