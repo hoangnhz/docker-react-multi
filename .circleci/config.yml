@@ -16,7 +16,6 @@ jobs:
           debug: false 
           lint-dockerfile: false 
           treat-warnings-as-errors: false 
-          docker-context: ./client 
           dockerfile: Dockerfile.dev 
           path: ./client 
 
