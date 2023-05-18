@@ -47,11 +47,11 @@ jobs:
           command: 
             docker build -t hoangnhdocker/multi-worker:latest ./worker
 
-  push-docker-image:
-    docker:
-      - image: cimg/node:14.0.0
-    steps:
-      - docker/check       
+#  push-docker-image:
+#    docker:
+#      - image: cimg/node:14.0.0
+#    steps:
+#      - docker/check       
       - run:
           name: Push Docker image
           command: |
@@ -68,6 +68,6 @@ workflows:
       - build-docker-image:
           requires:
             - test-client
-      - push-docker-image:
-          requires:
-            - build-docker-image
+#      - push-docker-image:
+#          requires:
+#            - build-docker-image
